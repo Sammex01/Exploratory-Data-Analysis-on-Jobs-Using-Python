@@ -7,7 +7,7 @@ I put together this analysis to find out which technical skills are most request
 View my [notebook](skill_in_demand.ipynb) to see the full analysis, including data cleaning and methodology.
 
 ### 📈 Visualize Data
-```
+```python
 plt.figure(figsize=(10, 6))
 ax = sns.barplot(data=skill_stats, x='percentage', y='skill', hue='skill', palette='magma', legend=False)
 plt.title('Top 10 Skills for Remote Data Analysts (%)', fontsize=15)
@@ -22,7 +22,8 @@ for i, p in enumerate(ax.patches):
 plt.tight_layout()
 plt.show()
 ```
-
+### Results
+![alt text](image.png)
 
 ### 💡 Key Insights (Phase 1)
 * 👑 **The "Gold Standard"**: SQL and Excel remain the most dominant requirements, appearing in over **[X]%** of remote postings.
