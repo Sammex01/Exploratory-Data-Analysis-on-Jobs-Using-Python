@@ -24,7 +24,7 @@ top_10_skills.sort_values().plot(kind='barh', figsize=(10, 6), title='Top 10 Rem
 ```
 View my [notebook](1_skills_in_demand.ipynb) to see the full analysis, including data cleaning and methodology.
 ### Visualization: Top Skills
-![Image](Images\skills_likelihood.png)
+![Image](Images/skills_likelihood.png)
 
 
 ### Key Insights:
@@ -56,7 +56,7 @@ df_pivot_pct[top_5].plot(kind='line', figsize=(10, 6), marker='o')
 ```
 View my [notebook](2_skills_trend.ipynb) to see the full analysis, including data cleaning and methodology.
 ### Visualization: Top Skills Trend
-![Image](Images\skills_trend.png)
+![Image](Images/skills_trend.png)
 
 ### 💡 Key Insights
 
@@ -84,7 +84,7 @@ View my [notebook](3_skills_salary.ipynb) to see the full analysis, including da
 ### 📉 Visualization: Top Paying Skills
 This bar chart displays the premium the market places on specific competencies:
 
-![Image](Images\highest_skills.png)
+![Image](Images/highest_skills.png)
 ### Key Insights
 
 - **Cloud platforms command the highest salaries** — **Snowflake** ($106,479), **Azure** ($105,000), and **AWS** ($104,000) occupy the top 3 spots, paying ~$10K+ more than traditional BI tools, signaling a clear market premium for cloud-native skills.
@@ -108,7 +108,7 @@ salary_median = df_salary.groupby('degree_req')['salary_year_avg'].median()
 View my [notebook](4_degree_requirement.ipynb) to see the full analysis, including data cleaning and methodology.
 
 ### 📉 Visualization: Opportunity & Pay
-![Image](Images\degree_required.png)
+![Image](Images/degree_required.png)
 
 ### 💡 Key Insights
 - **A degree is still the majority expectation** — 59.2% of remote data analyst roles list a degree requirement, but the 40.8% that don't represents a substantial and accessible entry point for non-traditional candidates.
@@ -136,7 +136,7 @@ df_remote['seniority'] = df_remote['job_title'].apply(assign_seniority)
 View my [notebook](5_seniority_divide.ipynb) to see the full analysis, including data cleaning and methodology.
 
 ### 📉 Visualization: Availability & Compensation
-![Image](Images\job_roles.png)
+![Image](Images/job_roles.png)
 
 ### 💡 Key Insights
 
