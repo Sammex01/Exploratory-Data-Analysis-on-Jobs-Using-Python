@@ -55,9 +55,8 @@ top_5 = df_pivot.sum().sort_values(ascending=False).head(5).index
 df_pivot_pct[top_5].plot(kind='line', figsize=(10, 6), marker='o')
 ```
 View my [notebook](2_skills_trend.ipynb) to see the full analysis, including data cleaning and methodology.
-### Visualize Data
-![Image](Images\skill_trend.png)
-
+### Visualization: Top Skills Trend
+![Image](Images\skills_trend.png)
 
 ### 💡 Key Insights
 
@@ -84,12 +83,65 @@ top_paying_skills = skill_stats[skill_stats['skill_count'] >= min_count]
 top_paying_skills = top_paying_skills.sort_values(by='median_salary', ascending=False).head(10)
 ```
 View my [notebook](3_skills_salary.ipynb) to see the full analysis, including data cleaning and methodology.
-## 📉 Visualize Data
+### 📉 Visualization: Top Paying Skills
 This bar chart displays the premium the market places on specific competencies:
 
 ![Image](Images\highest_skills.png)
-## Key Insights
+### Key Insights
 
 - **Cloud platforms command the highest salaries** — **Snowflake** ($106,479), **Azure** ($105,000), and **AWS** ($104,000) occupy the top 3 spots, paying ~$10K+ more than traditional BI tools, signaling a clear market premium for cloud-native skills.
 - **The $95K cluster reveals a competitive mid-tier** — **Python**, **Power BI**, **SQL Server**, and **Looker** all land at exactly $95,000, suggesting employers bundle these as interchangeable "standard analyst" skills with no differentiation in pay.
 - **Even the lowest-ranked skill (Tableau at $92,500) pays six figures nearby** — the entire top 10 sits within a tight $14K band, meaning any one of these skills can anchor a strong remote analyst salary, but cloud tools are the ceiling-breakers.
+
+## 🎓 The Degree Requirement
+
+It's no secret that the tech industry is open to self-taught talent. But does that hold true for remote Data Analysts? I wanted to find out if a formal degree is actually required to land a job, and whether lacking one hurts your earning potential.
+
+
+```python
+# Create readable labels and calculate volume percentages
+df_remote['degree_req'] = df_remote['job_no_degree_mention'].map({False: 'Degree Required', True: 'No Degree Required'})
+volume_pct = df_remote['degree_req'].value_counts(normalize=True) * 100
+
+# Calculate median salary for each group
+df_salary = df_remote.dropna(subset=['salary_year_avg'])
+salary_median = df_salary.groupby('degree_req')['salary_year_avg'].median()
+```
+View my [notebook](4_degree_requirement.ipynb) to see the full analysis, including data cleaning and methodology.
+
+### 📉 Visualization: Opportunity & Pay
+![Image](Images\degree_required.png)
+
+### 💡 Key Insights
+- **A degree is still the majority expectation** — 59.2% of remote data analyst roles list a degree requirement, but the 40.8% that don't represents a substantial and accessible entry point for non-traditional candidates.
+- **No-degree roles actually pay more** — median salary for degree-not-required postings is $90,000 vs. $85,000 for degree-required roles, a $5K gap that suggests employers waiving degree requirements are compensating with higher pay to attract skilled candidates.
+- **Portfolio over pedigree is a viable strategy** — the combination of a large no-degree market share and a salary premium for those roles means demonstrable skills (projects, certifications, tools) can outperform a degree both in access and earning potential.
+
+## 🧗 The Seniority Divide
+
+Since working remotely requires a lot of independence, are companies hesitant to hire junior analysts for these roles? I broke down the job postings by experience level to see where the real remote opportunities are—and how much your salary grows as you level up.
+
+
+```python
+# Custom function to parse job titles and engineer a 'seniority' column
+def assign_seniority(title):
+    title = str(title).lower()
+    if any(word in title for word in ['senior', 'sr', 'lead', 'principal']):
+        return 'Senior'
+    elif any(word in title for word in ['junior', 'jr', 'entry']):
+        return 'Junior / Entry'
+    else:
+        return 'Mid-Level'
+
+df_remote['seniority'] = df_remote['job_title'].apply(assign_seniority)
+```
+View my [notebook](5_seniority_divide.ipynb) to see the full analysis, including data cleaning and methodology.
+
+### 📉 Visualization: Availability & Compensation
+![Image](Images\job_roles.png)
+
+### 💡 Key Insights
+
+- **Mid-level is the sweet spot for remote work** — a massive 83% of postings are aimed at mid-level candidates. That completely dwarfs both junior (~9%) and senior (~8%) roles combined. If you want a remote job, your best bet is to focus on building up that mid-level credibility as quickly as possible.
+- **The junior-to-mid jump is a huge turning point** — salaries jump from about $65K for juniors to $85K for mid-level (a solid $20K bump). And the pay bumps just keep growing: stepping up to a senior role pushes the median salary up another $35K to $120K.
+- **Senior roles are rare but not out of reach** — they make up about 8% of postings, which is roughly the same as entry-level jobs. This changes the perspective: the biggest hurdle isn't slowly racking up years of experience to become a senior, it's actually breaking into that mid-level tier to begin with.
