@@ -23,11 +23,11 @@ top_10_skills = skill_percentages.head(10)
 top_10_skills.sort_values().plot(kind='barh', figsize=(10, 6), title='Top 10 Remote Data Analyst Skills (%)')
 ```
 View my [notebook](1_skills_in_demand.ipynb) to see the full analysis, including data cleaning and methodology.
-### Visualize Data
+### Visualization: Top Skills
 ![Image](Images\skills_likelihood.png)
 
 
-### 💡 Key Insights
+### Key Insights:
 
 - **SQL is non-negotiable** — appearing in 54.8% of remote data analyst postings, it's the only skill demanded by more than half of employers, making it nearly twice as common as the next skill (Excel at 34.5%).
 - **The core stack is SQL + Excel + Python + Tableau** — these four skills cover the top 28%–55% demand range and represent the minimum viable toolkit for remote analyst roles; everything below Power BI (19.6%) drops off sharply.
