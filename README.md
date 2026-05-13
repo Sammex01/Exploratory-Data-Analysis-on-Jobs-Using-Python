@@ -37,6 +37,9 @@ top_10_skills.sort_values().plot(kind='barh', figsize=(10, 6), title='Top 10 Rem
 
 ### 🎯 Objective
 Just looking at total skill counts doesn't tell the whole story. I wanted to track the **momentum** of these skills over the year.To get a clear picture, I converted the data into **percentages** instead of raw counts. This smoothed out seasonal hiring spikes and gives a better idea of how likely a skill is to be requested in any given month.
+
+View my [notebook](2_skills_trend.ipynb) to see the full analysis, including data cleaning and methodology.
+
 ### Visualize Data
 ```python
 # 1. Explode the skills list and pivot the data by month
