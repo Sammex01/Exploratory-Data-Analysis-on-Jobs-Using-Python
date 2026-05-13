@@ -1,5 +1,5 @@
 # 📊 The Analysis
-## 🎯 The Most Demanded Skills for Remote Data Analyst Jobs
+## 1️⃣ The Most Demanded Skills for Remote Data Analyst Jobs
 
 I put together this analysis to find out which technical skills are most requested for remote **Data Analyst** jobs. By looking at percentages rather than raw counts, it's easier to see the real probability of an employer asking for a specific skill.
 
@@ -34,7 +34,7 @@ View my [notebook](1_skills_in_demand.ipynb) to see the full analysis, including
 - **Cloud and presentation tools are rare differentiators** — Azure, PowerPoint, and Looker are only requested in about 6% of job postings. However, checking this against salary data shows Azure is a bit of a hidden gem. It has lower demand but a high median salary ($105K), making it a smart niche skill to learn after mastering the core stack
 
 
-## 📈 Top skills trends
+## 2️⃣ Top skills trends
 
 Just looking at total skill counts doesn't tell the whole story. I wanted to track the **momentum** of these skills over the year.To get a clear picture, I converted the data into **percentages** instead of raw counts. This smoothed out seasonal hiring spikes and gives a better idea of how likely a skill is to be requested in any given month.
 
@@ -64,9 +64,7 @@ View my [notebook](2_skills_trend.ipynb) to see the full analysis, including dat
 - **Excel and Python are neck-and-neck in mid-tier demand** (both 28–36%), but Python shows resilience with a sharp late-year recovery in December, signaling growing employer preference for programmatic analysis.
 - **Tableau and Power BI remain baseline expectations** (20–25%), suggesting visualization tools are treated as complementary skills rather than primary hiring filters but their consistent presence means neither can be ignored.
 
-## 💰 The Financial Value of Skills
-
-### 🎯 Objective
+## 3️⃣ The Financial Value of Skills
 While SQL and Excel are the most requested skills, are they the highest paying skills? The goal of this analysis was to identify which technical skills yield the highest median salaries for Data Analysts, isolating the tools that provide the best return on investment for learning.
 
 
@@ -93,7 +91,7 @@ This bar chart displays the premium the market places on specific competencies:
 - **The $95K cluster reveals a competitive mid-tier** — **Python**, **Power BI**, **SQL Server**, and **Looker** all land at exactly $95,000, suggesting employers bundle these as interchangeable "standard analyst" skills with no differentiation in pay.
 - **Even the lowest-ranked skill (Tableau at $92,500) pays six figures nearby** — the entire top 10 sits within a tight $14K band, meaning any one of these skills can anchor a strong remote analyst salary, but cloud tools are the ceiling-breakers.
 
-## 🎓 The Degree Requirement
+## 4️⃣ 🎓 The Degree Requirement
 
 It's no secret that the tech industry is open to self-taught talent. But does that hold true for remote Data Analysts? I wanted to find out if a formal degree is actually required to land a job, and whether lacking one hurts your earning potential.
 
@@ -117,7 +115,7 @@ View my [notebook](4_degree_requirement.ipynb) to see the full analysis, includi
 - **No-degree roles actually pay more** — median salary for degree-not-required postings is $90,000 vs. $85,000 for degree-required roles, a $5K gap that suggests employers waiving degree requirements are compensating with higher pay to attract skilled candidates.
 - **Portfolio over pedigree is a viable strategy** — the combination of a large no-degree market share and a salary premium for those roles means demonstrable skills (projects, certifications, tools) can outperform a degree both in access and earning potential.
 
-## 🧗 The Seniority Divide
+## 5️⃣ 🧗 The Seniority Divide
 
 Since working remotely requires a lot of independence, are companies hesitant to hire junior analysts for these roles? I broke down the job postings by experience level to see where the real remote opportunities are—and how much your salary grows as you level up.
 
